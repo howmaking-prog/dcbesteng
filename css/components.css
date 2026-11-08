@@ -572,6 +572,10 @@ tr:last-child td {
 }
 
 @media (min-width: 900px) {
+  .brand span {
+    font-size: 22px;
+  }
+
   .nav {
     display: flex;
     align-items: center;

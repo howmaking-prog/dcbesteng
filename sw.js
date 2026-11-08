@@ -1,5 +1,5 @@
 // 홈 화면 앱이 온라인이면 최신 파일을 받고, 오프라인일 때만 저장본을 쓴다.
-const VERSION = "dcbest-18";
+const VERSION = "dcbest-19";
 
 self.addEventListener("install", () => {
   self.skipWaiting();

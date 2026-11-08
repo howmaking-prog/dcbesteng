@@ -97,6 +97,11 @@
   gap: 16px;
 }
 
+/* 정규프로그램 신청 버튼과 과목 카드가 붙지 않게 띄운다. */
+.dept > .grid {
+  margin-top: 40px;
+}
+
 .roadmap li {
   padding: 22px;
   border: 1px solid var(--line);

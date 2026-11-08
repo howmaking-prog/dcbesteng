@@ -193,7 +193,7 @@
 
   // 홈 화면에 저장한 앱이 온라인이면 최신 파일을 받고, 갱신되면 한 번 다시 연다.
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js?v=6").then((registration) => {
+    navigator.serviceWorker.register("sw.js?v=7").then((registration) => {
       registration.update();
       registration.addEventListener("updatefound", () => {
         const worker = registration.installing;

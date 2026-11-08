@@ -117,8 +117,8 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  background: var(--header);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
 }
 
 .header-inner {
@@ -136,7 +136,7 @@
   gap: 10px;
   min-width: 0;
   margin-right: auto;
-  color: var(--white);
+  color: var(--navy);
   font-weight: 800;
   letter-spacing: -0.03em;
 }
@@ -159,6 +159,14 @@
 
 .header-cta {
   display: none;
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+
+.header-cta:hover {
+  background: var(--blue-deep);
+  border-color: var(--blue-deep);
 }
 
 .menu-toggle {
@@ -179,7 +187,7 @@
   width: 20px;
   height: 2px;
   margin-inline: auto;
-  background: var(--white);
+  background: var(--navy);
 }
 
 .mega {
@@ -573,15 +581,15 @@ tr:last-child td {
   .nav > a {
     padding: 10px 12px;
     border-radius: 10px;
-    color: rgba(255, 255, 255, 0.88);
+    color: var(--navy);
     font-size: 15px;
     font-weight: 700;
   }
 
   .nav > a:hover,
   .nav > a.is-active {
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.08);
+    color: var(--navy);
+    background: var(--sky);
   }
 
   .header-cta {

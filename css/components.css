@@ -378,7 +378,7 @@
 .page-hero--elementary {
   background-image:
     linear-gradient(90deg, rgba(16, 24, 36, 0.62) 0%, rgba(16, 24, 36, 0.42) 55%, rgba(16, 24, 36, 0.28) 100%),
-    url("../img/elementary.jpg");
+    url("../img/elementary.jpg?v=16");
 }
 
 .page-hero--middle {
@@ -390,7 +390,7 @@
 .page-hero--high {
   background-image:
     linear-gradient(90deg, rgba(16, 24, 36, 0.62) 0%, rgba(16, 24, 36, 0.42) 55%, rgba(16, 24, 36, 0.28) 100%),
-    url("../img/high_school.jpg");
+    url("../img/high_school.jpg?v=16");
 }
 
 .page-hero--about {

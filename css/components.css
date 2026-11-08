@@ -262,18 +262,46 @@
   gap: 22px;
 }
 
-.footer-nav b {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--white);
-  font-size: 14px;
-}
-
 .footer-nav a {
   display: block;
   padding: 4px 0;
   color: #b7c3d6;
   font-size: 14px;
+}
+
+.footer-nav a.footer-nav-title {
+  margin-bottom: 8px;
+  padding: 0;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* 모바일에서는 하위 메뉴를 접고 상위 메뉴만 한 줄로 둔다 */
+@media (max-width: 899px) {
+  .footer-top {
+    gap: 22px;
+    padding: 36px 0 20px;
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .footer-nav a:not(.footer-nav-title) {
+    display: none;
+  }
+
+  .footer-nav a.footer-nav-title {
+    margin: 0;
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    font-size: 13px;
+    line-height: 1.2;
+  }
 }
 
 .footer-bottom {

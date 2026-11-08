@@ -49,7 +49,7 @@
   const footer = () => {
     const columns = site.menu.map((item) => `
       <div>
-        <b>${item.label}</b>
+        <a class="footer-nav-title" href="${item.href}">${item.label}</a>
         ${item.items.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}
       </div>
     `).join("");

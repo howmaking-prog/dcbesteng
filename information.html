@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>입시정보 — 대치베스트어학원</title>
-  <meta name="description" content="대치베스트어학원 입시정보. 교육정보, 설명회 소식, 성공 후기, 자주 묻는 질문." />
+  <meta name="description" content="대치베스트어학원 입시정보. 교육정보, 설명회 소식, 자주 묻는 질문." />
   <link rel="canonical" href="https://howmaking-prog.github.io/dcbesteng/information.html" />
   <meta property="og:title" content="입시정보 — 대치베스트어학원" />
-  <meta property="og:description" content="교육정보, 설명회, 성공 후기, 자주 묻는 질문." />
+  <meta property="og:description" content="교육정보, 설명회, 자주 묻는 질문." />
   <link rel="icon" href="img/icon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="img/icon-192.png" sizes="192x192" type="image/png" />
   <link rel="apple-touch-icon" href="img/icon-180.png" sizes="180x180" />
@@ -31,13 +31,12 @@
         <nav class="breadcrumb" aria-label="현재 위치"><a href="index.html">홈</a><span>/</span><span>입시정보</span></nav>
         <p class="eyebrow">05 · Admission Info</p>
         <h1>입시정보</h1>
-        <p class="lead">교육·입시 소식, 설명회 일정, 재원생 성공 후기, 자주 묻는 질문을 한곳에 모았습니다.</p>
+        <p class="lead" data-c="home.infoLead">교육·입시 소식, 설명회 일정, 자주 묻는 질문을 한곳에 모았습니다.</p>
       </div>
     </section>
     <nav class="page-tabs" aria-label="입시정보 하위 메뉴"><div class="container"><ul>
       <li><a href="information.html#edu">교육정보</a></li>
       <li><a href="information.html#events">설명회 소식</a></li>
-      <li><a href="information.html#reviews">성공 후기</a></li>
       <li><a href="information.html#faq">FAQ</a></li>
     </ul></div></nav>
 
@@ -52,7 +51,7 @@
           <li><span class="tag">학습법</span><span>문법 선행과 문장 암기</span></li>
           <li><span class="tag">입시</span><span>고교학점제와 영어 과목 선택</span></li>
         </ul>
-        <p class="note">글 제목, 날짜, 본문 링크는 원고가 있는 항목만 연결합니다. 현재 게시된 글은 없습니다.</p>
+        <p class="note" data-c="notices.newsPage">글 제목, 날짜, 본문 링크는 원고가 있는 항목만 연결합니다. 현재 게시된 글은 없습니다.</p>
       </div>
     </section>
 
@@ -62,26 +61,14 @@
         <h2 class="section-title">설명회 소식</h2>
         <p class="section-lead">학기·방학마다 학부모 설명회를 엽니다. 일시와 장소가 정해진 일정만 접수 중으로 표시합니다.</p>
         <div class="empty-panel" style="margin-top:20px">
-          <strong>현재 접수 중인 설명회가 없습니다.</strong>
-          <p>겨울특강, 예비중·예비고 설명회 일정이 확정되면 일시, 장소, 대상을 여기에 올립니다. 상담이 필요하면 입학테스트 신청으로 남겨 주세요.</p>
+          <strong data-c="notices.eventPageTitle">현재 접수 중인 설명회가 없습니다.</strong>
+          <p data-c="notices.eventPage">겨울특강, 예비중·예비고 설명회 일정이 확정되면 일시, 장소, 대상을 여기에 올립니다. 상담이 필요하면 입학테스트 신청으로 남겨 주세요.</p>
         </div>
-        <a class="btn btn--primary" style="margin-top:16px" data-form href="https://forms.gle/56UrF6DMBsJvN71w8">상담 신청</a>
+        <a class="btn btn--primary" style="margin-top:16px" data-form="consult" href="https://forms.gle/56UrF6DMBsJvN71w8">상담 신청</a>
       </div>
     </section>
 
-    <section class="section" id="reviews">
-      <div class="container">
-        <p class="eyebrow">Success Stories</p>
-        <h2 class="section-title">성공 후기</h2>
-        <p class="section-lead">실제 재원생·졸업생의 사례와 후기를 동의를 받아 게시합니다.</p>
-        <div class="empty-panel" style="margin-top:20px">
-          <strong>게시된 후기가 없습니다.</strong>
-          <p>학교명, 학년, 성적 변화, 후기 문장은 확인된 내용만 올립니다.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--soft" id="faq">
+    <section class="section" id="faq">
       <div class="container">
         <p class="eyebrow">FAQ</p>
         <h2 class="section-title">자주 묻는 질문</h2>
@@ -97,6 +84,7 @@
     </section>
   </main>
   <div id="site-footer"></div>
+  <script src="js/content.js"></script>
   <script src="js/config.js"></script>
   <script src="js/site.js"></script>
 </body>

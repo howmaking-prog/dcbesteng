@@ -193,6 +193,10 @@
   padding: 28px 0 36px;
 }
 
+.mega-actions {
+  display: none;
+}
+
 .mega-cols {
   display: grid;
   gap: 22px;
@@ -553,6 +557,17 @@ tr:last-child td {
 }
 
 @media (max-width: 899px) {
+  .mega-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .mega-actions .btn {
+    flex: 1 1 140px;
+  }
+
   .site-header.is-open .mega {
     max-height: calc(100vh - var(--header-h));
     overflow: auto;

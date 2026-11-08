@@ -5,13 +5,23 @@ window.SITE = {
   phoneTel: "025563510",
   address: "서울 강남구 선릉로 64길 11-2, 6층",
   hours: "평일 14:00 ~ 22:00 · 토요일 10:00 ~ 18:00 · 일요일 휴무",
-  formUrl: "https://forms.gle/56UrF6DMBsJvN71w8",
+  // 짧은 주소 대신 항목을 채울 수 있는 원본 주소. 선택지는 실제 폼에 있는 값만 쓴다.
+  formBase: "https://docs.google.com/forms/d/e/1FAIpQLScRi-qijS5RmWd2eidLXIg_AZbYN_hfl9oQIidDl8FfPIVfqA/viewform",
+  formFields: {
+    intent: "entry.877086558",
+    grade: "entry.1447751006"
+  },
+  formIntentChoices: {
+    test: "테스트 예약",
+    consult: "상담 전화"
+  },
+  formGradeChoices: ["초등 5학년", "초등 6학년", "중 1학년", "중 2학년", "중 3학년"],
   mapEmbed: `https://maps.google.com/maps?q=${encodeURIComponent("서울 강남구 선릉로 64길 11-2")}&z=16&output=embed`,
   naverMap: `https://map.naver.com/p/search/${encodeURIComponent("서울 강남구 선릉로 64길 11-2")}`,
   owner: "강형경",
   bizNo: "306-95-41453",
   registrationNo: "제14193호",
-  logo: "img/logo.svg",
+  logo: "img/logo-custom.png",
   menu: [
     {
       key: "about",
@@ -64,9 +74,20 @@ window.SITE = {
       items: [
         ["교육정보", "information.html#edu"],
         ["설명회 소식", "information.html#events"],
-        ["성공 후기", "information.html#reviews"],
         ["FAQ", "information.html#faq"]
       ]
     }
   ]
+};
+
+// 버튼 종류에 맞춰 폼의 신청 유형을 채운 주소를 만든다. 폼에 없는 학년은 넣지 않는다.
+window.SITE.formLink = (intent, grade) => {
+  const url = new URL(window.SITE.formBase);
+  url.searchParams.set("usp", "pp_url");
+  const intentValue = window.SITE.formIntentChoices[intent];
+  if (intentValue) url.searchParams.set(window.SITE.formFields.intent, intentValue);
+  if (grade && window.SITE.formGradeChoices.includes(grade)) {
+    url.searchParams.set(window.SITE.formFields.grade, grade);
+  }
+  return url.toString();
 };

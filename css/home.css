@@ -16,6 +16,7 @@
   font-weight: 800;
   line-height: 1.28;
   letter-spacing: -0.04em;
+  white-space: pre-line;
 }
 
 .hero .lead {
@@ -101,6 +102,7 @@
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .roadmap .step {
@@ -131,6 +133,22 @@
 .roadmap .is-final .step,
 .roadmap .is-final h3,
 .roadmap .is-final p {
+  color: var(--white);
+}
+
+/* 단계 박스에 마우스를 올리면 고3 카드와 같은 남색으로 바뀐다. */
+.roadmap li:hover,
+.roadmap li:focus-within {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.roadmap li:hover .step,
+.roadmap li:hover h3,
+.roadmap li:hover p,
+.roadmap li:focus-within .step,
+.roadmap li:focus-within h3,
+.roadmap li:focus-within p {
   color: var(--white);
 }
 

@@ -32,13 +32,17 @@
             <span>${esc(site.name)}</span>
           </a>
           <nav class="nav" aria-label="주요 메뉴">${nav}</nav>
-          <a class="btn btn--ghost header-cta" href="${esc(site.formUrl)}" target="_blank" rel="noopener noreferrer">입학 테스트</a>
+          <a class="btn btn--ghost header-cta" data-form="test" href="${esc(site.formBase)}">입학 테스트</a>
           <button class="menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="megaMenu">
             <span></span><span></span><span></span>
           </button>
         </div>
         <div class="mega" id="megaMenu">
           <div class="mega-inner">
+            <div class="mega-actions">
+              <a class="btn btn--primary" data-tel href="tel:${esc(site.phoneTel)}">전화 ${esc(site.phone)}</a>
+              <a class="btn btn--ghost" data-form="test" href="${esc(site.formBase)}">입학테스트 신청</a>
+            </div>
             <div class="mega-cols">${columns}</div>
           </div>
         </div>
@@ -90,13 +94,22 @@
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // 페이지 문구는 js/content.js 한곳에서 덮어쓴다.
+  const readPath = (root, path) => path.split(".").reduce((acc, key) => (acc == null ? acc : acc[key]), root);
+  if (window.CONTENT) {
+    document.querySelectorAll("[data-c]").forEach((node) => {
+      const value = readPath(window.CONTENT, node.dataset.c);
+      if (typeof value === "string") node.textContent = value;
+    });
+  }
+
   document.querySelectorAll("[data-bind]").forEach((node) => {
     const value = site[node.dataset.bind];
     if (value) node.textContent = value;
   });
 
   document.querySelectorAll("[data-form]").forEach((node) => {
-    node.href = site.formUrl;
+    node.href = site.formLink(node.dataset.form || "test", node.dataset.formGrade || "");
     node.target = "_blank";
     node.rel = "noopener noreferrer";
   });
@@ -122,18 +135,31 @@
     }
   };
 
+  const nav = headerNode ? headerNode.querySelector(".nav") : null;
+  const mega = headerNode ? headerNode.querySelector(".mega") : null;
+  const cancelClose = () => clearTimeout(closeTimer);
+  const scheduleClose = () => {
+    if (mobileQuery.matches) return;
+    closeTimer = setTimeout(() => setMenu(false), 160);
+  };
+  const openFromMenu = () => {
+    if (mobileQuery.matches) return;
+    cancelClose();
+    setMenu(true);
+  };
+
+  // PC에서는 메뉴와 펼친 목록 위에 있을 때만 연다.
+  if (nav) {
+    nav.addEventListener("mouseenter", openFromMenu);
+    nav.addEventListener("mouseleave", scheduleClose);
+  }
+  if (mega) {
+    mega.addEventListener("mouseenter", openFromMenu);
+    mega.addEventListener("mouseleave", scheduleClose);
+  }
   if (headerNode) {
-    headerNode.addEventListener("mouseenter", () => {
-      if (mobileQuery.matches) return;
-      clearTimeout(closeTimer);
-      setMenu(true);
-    });
-    headerNode.addEventListener("mouseleave", () => {
-      if (mobileQuery.matches) return;
-      closeTimer = setTimeout(() => setMenu(false), 120);
-    });
-    headerNode.addEventListener("focusin", () => {
-      if (!mobileQuery.matches) setMenu(true);
+    headerNode.addEventListener("focusin", (event) => {
+      if (event.target.closest(".nav, .mega")) openFromMenu();
     });
     headerNode.addEventListener("focusout", (event) => {
       if (!headerNode.contains(event.relatedTarget)) setMenu(false);
@@ -163,5 +189,19 @@
     };
     mark();
     window.addEventListener("hashchange", mark);
+  }
+
+  // 홈 화면에 저장한 앱이 온라인이면 최신 파일을 받고, 갱신되면 한 번 다시 연다.
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").then((registration) => {
+      registration.update();
+      registration.addEventListener("updatefound", () => {
+        const worker = registration.installing;
+        if (!worker) return;
+        worker.addEventListener("statechange", () => {
+          if (worker.state === "activated" && navigator.serviceWorker.controller) window.location.reload();
+        });
+      });
+    }).catch(() => {});
   }
 })();

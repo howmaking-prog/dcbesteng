@@ -353,6 +353,34 @@
   margin-top: 14px;
 }
 
+/* 부서 상단 배너. 사진 위에 어두운 막을 얹고 제목과 설명을 흰색으로 둔다. */
+.page-hero--photo {
+  display: flex;
+  align-items: center;
+  min-height: 340px;
+  padding: 64px 0;
+  border-bottom: 0;
+  background:
+    linear-gradient(90deg, rgba(16, 24, 36, 0.62) 0%, rgba(16, 24, 36, 0.42) 55%, rgba(16, 24, 36, 0.28) 100%),
+    url("../img/elementary-hero.jpg") center 55% / cover no-repeat;
+  color: var(--white);
+}
+
+.page-hero--photo h1,
+.page-hero--photo .breadcrumb,
+.page-hero--photo .breadcrumb a,
+.page-hero--photo .breadcrumb span {
+  color: var(--white);
+}
+
+.page-hero--photo .lead {
+  max-width: 640px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
 .page-tabs {
   position: sticky;
   top: var(--header-h);
@@ -554,6 +582,14 @@ tr:last-child td {
 
   .page-hero h1 {
     font-size: 48px;
+  }
+
+  .page-hero--photo {
+    min-height: 420px;
+  }
+
+  .page-hero--photo h1 {
+    font-size: 56px;
   }
 }
 

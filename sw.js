@@ -1,5 +1,5 @@
 // 홈 화면 앱이 온라인이면 최신 파일을 받고, 오프라인일 때만 저장본을 쓴다.
-const VERSION = "dcbest-5";
+const VERSION = "dcbest-6";
 
 self.addEventListener("install", () => {
   self.skipWaiting();
@@ -19,7 +19,7 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
   event.respondWith(
-    fetch(request).then((response) => {
+    fetch(request, { cache: "reload" }).then((response) => {
       if (response && response.ok) {
         const copy = response.clone();
         caches.open(VERSION).then((cache) => cache.put(request, copy));

@@ -9,7 +9,7 @@ alwaysApply: true
 
 공개 주소: https://howmaking-prog.github.io/dcbesteng/
 
-변경을 커밋하고 `main`에 푸시한다. GitHub Pages가 이 저장소 루트를 공개한다.
+변경을 커밋하고 `main`에 푸시한다. GitHub Pages가 이 저장소 루트를 공개한다. 스타일이나 스크립트를 고치면 HTML의 `?v=` 숫자를 올려, 브라우저가 이전 파일을 계속 보여 주지 않게 한다.
 
 ```bash
 git push origin main

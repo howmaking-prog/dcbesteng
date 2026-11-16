@@ -45,7 +45,19 @@ window.CONTENT = {
     timetableMiddle: "학기 중 정규 시간표와 내신 기간 보충 일정은 반이 확정되면 올립니다. 현재 게시된 시간표는 없습니다.",
     timetableHigh: "학기 중 정규 시간표와 모의고사 실시일은 확정되면 표로 올립니다. 현재 게시된 시간표는 없습니다.",
     timetableNote: "정원 마감 시 대기 접수를 받습니다. 시간표는 학기마다 조정될 수 있습니다.",
-    timetableNoteElementary: "정원 마감 시 대기 접수를 받습니다. 시간표는 학기마다 조정될 수 있습니다. 방학 특강 시간표는 설명회 소식에서 안내합니다."
+    timetableNoteElementary: "정원 마감 시 대기 접수를 받습니다. 시간표는 학기마다 조정될 수 있습니다. 방학 특강 시간표는 설명회 소식에서 안내합니다.",
+    boardCat1: "설명회",
+    boardTitle1: "현재 접수 중인 설명회가 없습니다.",
+    boardMeta1: "일정 확정 전",
+    boardCat2: "교육정보",
+    boardTitle2: "아직 게시된 글이 없습니다.",
+    boardMeta2: "원고 확정 전",
+    boardCat3: "시간표",
+    boardTitle3: "현재 게시된 시간표가 없습니다.",
+    boardMeta3: "확정본 게시 전",
+    boardCat4: "일반 공지",
+    boardTitle4: "등록된 공지가 없습니다.",
+    boardMeta4: "게시 전"
   },
   elementary: {
     regular: "리딩·어휘·기초 문법·영작을 균형 있게 다룹니다. 입학테스트 결과로 레벨을 나누고, 레벨마다 다른 교재와 암기 분량을 씁니다.",

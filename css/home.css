@@ -283,6 +283,105 @@
   color: var(--white);
 }
 
+/* 첫 화면 공지 카드. 기본은 흰색이고, 마우스를 올리면 입시로드맵처럼 남색이 된다. */
+.notice-head {
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.notice-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c62828;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.notice-more span {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 50%;
+  background: #c62828;
+  color: var(--white);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.notice-board {
+  display: grid;
+  gap: 16px;
+}
+
+.notice-board a {
+  display: flex;
+  flex-direction: column;
+  min-height: 196px;
+  height: 100%;
+  padding: 22px 22px 18px;
+  border: 1px solid #e4e7ee;
+  border-radius: 16px;
+  background: var(--white);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.notice-cat {
+  color: #8b93a1;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.notice-board strong {
+  margin-top: 18px;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.55;
+}
+
+.notice-date {
+  margin-top: auto;
+  padding-top: 28px;
+  color: #9aa3b2;
+  font-size: 13px;
+}
+
+.notice-board a:hover,
+.notice-board a:focus-visible {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.notice-board a:hover .notice-cat,
+.notice-board a:hover strong,
+.notice-board a:hover .notice-date,
+.notice-board a:focus-visible .notice-cat,
+.notice-board a:focus-visible strong,
+.notice-board a:focus-visible .notice-date {
+  color: var(--white);
+}
+
+@media (min-width: 760px) {
+  .notice-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .notice-head {
+    align-items: center;
+  }
+
+  .notice-board {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
 /* 첫 화면 부서 카드: 둥근 사진, 제목, 설명, 자세히 보기 */
 .program-grid {
   display: grid;

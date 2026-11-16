@@ -29,9 +29,9 @@ window.SITE = {
       href: "about.html",
       items: [
         ["인사말", "about.html#greeting"],
-        ["입학테스트", "admission.html"],
         ["학원시스템", "about.html#system"],
-        ["입시로드맵", "about.html#roadmap"]
+        ["입시로드맵", "about.html#roadmap"],
+        ["입학테스트", "admission.html"]
       ]
     },
     {

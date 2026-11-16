@@ -230,16 +230,27 @@
   gap: 16px;
 }
 
+/* 인사말 본문과 교육 철학 박스 사이를 띄운다. */
+.greeting-aside {
+  display: grid;
+  gap: 16px;
+  margin-top: 40px;
+}
+
 /* 정규프로그램 신청 버튼과 과목 카드가 붙지 않게 띄운다. */
 .dept > .grid {
   margin-top: 40px;
+}
+
+#roadmap {
+  background: #ffffff;
 }
 
 .roadmap li {
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--white);
+  background: #f4f7fb;
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
@@ -265,9 +276,21 @@
 
 .roadmap + .table-wrap {
   margin-top: 36px;
+  background: #f4f7fb;
 }
 
-/* 단계 박스는 기본이 흰색이고, 마우스를 올리면 남색으로 바뀐다. */
+.roadmap + .table-wrap table,
+.roadmap + .table-wrap td {
+  background: #f4f7fb;
+  color: var(--ink);
+}
+
+.roadmap + .table-wrap th {
+  background: #0c254f;
+  color: var(--white);
+}
+
+/* 단계 박스는 기본이 옅은 회색이고, 마우스를 올리면 남색으로 바뀐다. */
 .roadmap li:hover,
 .roadmap li:focus-within {
   background: var(--navy);
@@ -595,6 +618,21 @@
 
 .sys-card p {
   color: #c9d4e6;
+}
+
+/* 옅은 배경 위의 시스템 카드는 흰 카드와 진한 글씨로 읽히게 한다. */
+.section--soft .sys-card {
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.section--soft .sys-card h3,
+.section--soft .sys-card b {
+  color: var(--navy);
+}
+
+.section--soft .sys-card p {
+  color: var(--muted);
 }
 
 .section--navy .icon-box {

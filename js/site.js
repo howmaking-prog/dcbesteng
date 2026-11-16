@@ -191,9 +191,62 @@
     window.addEventListener("hashchange", mark);
   }
 
+  // 첫화면 배너를 일정 간격으로 넘긴다. 움직임 줄이기를 켠 경우에는 멈추고 버튼으로만 바꾼다.
+  const banner = document.querySelector("[data-banner]");
+  if (banner) {
+    const slides = [...banner.querySelectorAll("[data-banner-slide]")];
+    const dots = [...banner.querySelectorAll("[data-banner-dot]")];
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let index = 0;
+    let timer = 0;
+
+    const showBanner = (next) => {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((slide, slideIndex) => {
+        const active = slideIndex === index;
+        slide.classList.toggle("is-active", active);
+        slide.setAttribute("aria-hidden", active ? "false" : "true");
+        slide.toggleAttribute("inert", !active);
+      });
+      dots.forEach((dot, dotIndex) => {
+        const active = dotIndex === index;
+        dot.classList.toggle("is-active", active);
+        dot.setAttribute("aria-selected", active ? "true" : "false");
+      });
+    };
+
+    const startBanner = () => {
+      clearInterval(timer);
+      if (reducedMotion || slides.length < 2) return;
+      timer = setInterval(() => showBanner(index + 1), 5500);
+    };
+
+    const moveBanner = (step) => {
+      showBanner(index + step);
+      startBanner();
+    };
+
+    banner.querySelector("[data-banner-prev]").addEventListener("click", () => moveBanner(-1));
+    banner.querySelector("[data-banner-next]").addEventListener("click", () => moveBanner(1));
+    dots.forEach((dot, dotIndex) => {
+      dot.addEventListener("click", () => {
+        showBanner(dotIndex);
+        startBanner();
+      });
+    });
+    banner.addEventListener("mouseenter", () => clearInterval(timer));
+    banner.addEventListener("mouseleave", startBanner);
+    banner.addEventListener("focusin", () => clearInterval(timer));
+    banner.addEventListener("focusout", (event) => {
+      if (!banner.contains(event.relatedTarget)) startBanner();
+    });
+    showBanner(0);
+    startBanner();
+  }
+
   // 홈 화면에 저장한 앱이 온라인이면 최신 파일을 받고, 갱신되면 한 번 다시 연다.
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js?v=21").then((registration) => {
+    navigator.serviceWorker.register("sw.js?v=22").then((registration) => {
       registration.update();
       registration.addEventListener("updatefound", () => {
         const worker = registration.installing;

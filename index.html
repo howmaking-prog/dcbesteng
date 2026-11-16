@@ -21,34 +21,53 @@
   <meta name="theme-color" content="#12284B" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="css/tokens.css?v=21" />
-  <link rel="stylesheet" href="css/base.css?v=21" />
-  <link rel="stylesheet" href="css/components.css?v=21" />
-  <link rel="stylesheet" href="css/home.css?v=21" />
+  <link rel="stylesheet" href="css/tokens.css?v=22" />
+  <link rel="stylesheet" href="css/base.css?v=22" />
+  <link rel="stylesheet" href="css/components.css?v=22" />
+  <link rel="stylesheet" href="css/home.css?v=22" />
 </head>
 <body data-page="home">
   <a class="skip-link" href="#main">본문으로 건너뛰기</a>
   <div id="site-header"></div>
   <main id="main">
-    <section class="hero" id="top">
-      <div class="container hero-grid">
-        <div>
-          <p class="badge"><i></i><span data-c="home.hero.badge">대치동 영어 전문 학원 · 초등부부터 고등부까지</span></p>
-          <h1 data-c="home.hero.title">초등 기초부터 수능까지,<br />영어 성적이 바뀌는 수업</h1>
-          <p class="lead" data-c="home.hero.lead">학교별 내신 출제 경향 분석, 매 수업 문장 암기와 시험, 꾸준한 피드백까지. 대치베스트어학원은 공부한 만큼 점수로 증명합니다.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" data-form="test" href="https://forms.gle/56UrF6DMBsJvN71w8">입학테스트 신청</a>
-            <a class="btn btn--ghost" href="#programs">부서별 프로그램 보기</a>
+    <section class="banner" data-banner aria-roledescription="carousel" aria-label="주요 배너">
+      <div class="banner-viewport">
+        <article class="banner-slide banner-slide--main is-active" data-banner-slide>
+          <div class="container banner-copy">
+            <p class="banner-kicker">대치동 영어 전문</p>
+            <h1>초등 기초부터 수능까지,<br />영어 성적이 바뀌는 수업</h1>
+            <p class="banner-lead">학교별 내신 출제 경향 분석, 매 수업 문장 암기와 시험, 꾸준한 피드백까지. 공부한 만큼 점수로 증명합니다.</p>
+            <div class="btn-row">
+              <a class="btn btn--light" data-form="test" href="https://forms.gle/56UrF6DMBsJvN71w8">입학테스트 신청</a>
+              <a class="btn btn--line-light" href="#programs">부서별 프로그램 보기</a>
+            </div>
           </div>
+        </article>
+        <article class="banner-slide banner-slide--elementary" data-banner-slide aria-hidden="true">
+          <div class="container banner-copy">
+            <p class="banner-kicker">초등부</p>
+            <p class="banner-title">읽고 쓰는 힘을<br />먼저 만듭니다</p>
+            <p class="banner-lead">영어를 외우는 과목이 되기 전에, 리딩·어휘·기초 문법·영작으로 중등 내신까지 이어지는 기초를 만듭니다.</p>
+            <a class="btn btn--light" href="elementary.html">초등부 자세히 보기</a>
+          </div>
+        </article>
+        <article class="banner-slide banner-slide--high" data-banner-slide aria-hidden="true">
+          <div class="container banner-copy">
+            <p class="banner-kicker">고등부</p>
+            <p class="banner-title">내신과 수능을<br />함께 잡습니다</p>
+            <p class="banner-lead">지문 종합 분석으로 내신 서술형을 잡고, 모의고사 단어장과 누적 성적표로 수능 등급을 끌어올립니다.</p>
+            <a class="btn btn--light" href="high.html">고등부 자세히 보기</a>
+          </div>
+        </article>
+      </div>
+      <div class="banner-ui">
+        <button class="banner-arrow" type="button" data-banner-prev aria-label="이전 배너">‹</button>
+        <div class="banner-dots" role="tablist" aria-label="배너 선택">
+          <button class="is-active" type="button" data-banner-dot aria-label="1번 배너" aria-selected="true"></button>
+          <button type="button" data-banner-dot aria-label="2번 배너" aria-selected="false"></button>
+          <button type="button" data-banner-dot aria-label="3번 배너" aria-selected="false"></button>
         </div>
-        <aside class="hero-panel" aria-label="수업 관리 흐름">
-          <ol>
-            <li><span class="step-no">01</span><div><b>수업</b><p>학교와 단원에 맞춘 자료로 개념을 잡습니다.</p></div></li>
-            <li><span class="step-no">02</span><div><b>암기 · 시험</b><p>문장을 외우고 빈칸 시험으로 확인합니다.</p></div></li>
-            <li><span class="step-no">03</span><div><b>재시험</b><p>틀린 문장만 다시 모아 통과할 때까지 반복합니다.</p></div></li>
-            <li><span class="step-no">04</span><div><b>리포트</b><p>점수와 코멘트로 다음 계획을 조정합니다.</p></div></li>
-          </ol>
-        </aside>
+        <button class="banner-arrow" type="button" data-banner-next aria-label="다음 배너">›</button>
       </div>
     </section>
 
@@ -158,8 +177,8 @@
     </section>
   </main>
   <div id="site-footer"></div>
-  <script src="js/content.js?v=21"></script>
-  <script src="js/config.js?v=21"></script>
-  <script src="js/site.js?v=21"></script>
+  <script src="js/content.js?v=22"></script>
+  <script src="js/config.js?v=22"></script>
+  <script src="js/site.js?v=22"></script>
 </body>
 </html>

@@ -1,7 +1,140 @@
 /* 메인 페이지 */
-.hero {
-  padding: 56px 0 48px;
-  background: var(--sky-2);
+/* 첫화면 배너. 사진 위에 글을 올리고, 여러 장이 차례로 보인다. */
+.banner {
+  position: relative;
+  background: #101824;
+  color: var(--white);
+}
+
+.banner-viewport {
+  position: relative;
+  min-height: 460px;
+}
+
+.banner-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 72px 0 88px;
+  background-color: #101824;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.55s ease;
+}
+
+.banner-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.banner-slide--main {
+  background-image:
+    linear-gradient(90deg, rgba(12, 27, 51, 0.78) 0%, rgba(12, 27, 51, 0.46) 58%, rgba(12, 27, 51, 0.28) 100%),
+    url("../img/about.jpg");
+}
+
+.banner-slide--elementary {
+  background-image:
+    linear-gradient(90deg, rgba(16, 24, 36, 0.72) 0%, rgba(16, 24, 36, 0.4) 62%, rgba(16, 24, 36, 0.22) 100%),
+    url("../img/elementary.jpg");
+}
+
+.banner-slide--high {
+  background-image:
+    linear-gradient(90deg, rgba(16, 24, 36, 0.7) 0%, rgba(16, 24, 36, 0.38) 60%, rgba(16, 24, 36, 0.2) 100%),
+    url("../img/high_school.jpg");
+  background-position: center 70%;
+}
+
+.banner-copy {
+  max-width: 760px;
+}
+
+.banner-kicker {
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.banner h1,
+.banner-title {
+  max-width: 720px;
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.04em;
+}
+
+.banner-lead {
+  max-width: 620px;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.banner .btn-row,
+.banner-copy > .btn {
+  margin-top: 28px;
+}
+
+.banner-ui {
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.banner-arrow,
+.banner-dots button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.banner-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--white);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.banner-arrow:hover,
+.banner-dots button:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.banner-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.banner-dots button {
+  width: 28px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.banner-dots button.is-active,
+.banner-dots button[aria-selected="true"] {
+  width: 48px;
+  background: var(--white);
 }
 
 .hero-grid {
@@ -286,8 +419,13 @@
     padding: 96px 0 72px;
   }
 
-  .hero h1 {
-    font-size: 56px;
+  .banner-viewport {
+    min-height: 620px;
+  }
+
+  .banner h1,
+  .banner-title {
+    font-size: 60px;
   }
 
   .hero-grid {

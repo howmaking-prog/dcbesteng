@@ -57,7 +57,9 @@ window.CONTENT = {
     boardMeta3: "확정본 게시 전",
     boardCat4: "일반 공지",
     boardTitle4: "등록된 공지가 없습니다.",
-    boardMeta4: "게시 전"
+    boardMeta4: "게시 전",
+    // 확정된 공지만 추가한다. category는 일반 공지, 설명회, 교육정보, 시간표 중 하나다.
+    posts: []
   },
   elementary: {
     regular: "리딩·어휘·기초 문법·영작을 균형 있게 다룹니다. 입학테스트 결과로 레벨을 나누고, 레벨마다 다른 교재와 암기 분량을 씁니다.",

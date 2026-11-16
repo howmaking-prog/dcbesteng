@@ -382,6 +382,120 @@
   }
 }
 
+/* 입시정보 공지 게시판 */
+.board-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 28px;
+  margin: 28px 0 16px;
+}
+
+.board-cats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.board-cats button {
+  border: 0;
+  background: transparent;
+  padding: 6px 0;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.board-cats button + button::before {
+  content: "|";
+  margin: 0 12px;
+  color: #c5ccd6;
+  font-weight: 400;
+}
+
+.board-cats button.is-active {
+  color: #c62828;
+}
+
+.board-search {
+  display: flex;
+  align-items: center;
+  width: min(100%, 280px);
+  border: 1px solid #e1e5ec;
+  border-radius: 8px;
+  background: var(--white);
+}
+
+.board-search:focus-within {
+  border-color: var(--navy);
+}
+
+.board-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--ink);
+}
+
+.board-search input:focus {
+  outline: none;
+}
+
+.board-search button {
+  display: grid;
+  width: 42px;
+  height: 40px;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.board-search svg {
+  width: 18px;
+  height: 18px;
+}
+
+.board-table {
+  min-width: 760px;
+}
+
+.board-table:has(.board-empty) {
+  min-width: 0;
+}
+
+.board-table th,
+.board-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.board-table th:nth-child(3),
+.board-table td:nth-child(3) {
+  text-align: left;
+}
+
+.board-table th:nth-child(1),
+.board-table td:nth-child(1) {
+  width: 72px;
+}
+
+.board-table .is-pinned {
+  color: #c62828;
+  font-size: 16px;
+}
+
+.board-empty {
+  padding: 36px 16px;
+  color: var(--muted);
+  text-align: center;
+}
+
 /* 첫 화면 부서 카드: 둥근 사진, 제목, 설명, 자세히 보기 */
 .program-grid {
   display: grid;

@@ -17,10 +17,10 @@
   <meta name="apple-mobile-web-app-title" content="대치베스트어학원" />
   <meta name="theme-color" content="#12284B" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="css/tokens.css?v=26" />
-  <link rel="stylesheet" href="css/base.css?v=26" />
-  <link rel="stylesheet" href="css/components.css?v=26" />
-  <link rel="stylesheet" href="css/home.css?v=26" />
+  <link rel="stylesheet" href="css/tokens.css?v=28" />
+  <link rel="stylesheet" href="css/base.css?v=28" />
+  <link rel="stylesheet" href="css/components.css?v=28" />
+  <link rel="stylesheet" href="css/home.css?v=28" />
 </head>
 <body data-page="information">
   <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -36,6 +36,7 @@
     <nav class="page-tabs" aria-label="입시정보 하위 메뉴"><div class="container"><ul>
       <li><a href="information.html#edu">교육정보</a></li>
       <li><a href="information.html#events">설명회 소식</a></li>
+      <li><a href="information.html#notices">공지사항</a></li>
       <li><a href="information.html#faq">FAQ</a></li>
     </ul></div></nav>
 
@@ -67,6 +68,45 @@
       </div>
     </section>
 
+    <section class="section" id="notices">
+      <div class="container">
+        <h2 class="section-title">공지사항</h2>
+        <div class="board" data-board>
+          <div class="board-tools">
+            <div class="board-cats" role="tablist" aria-label="공지 분류">
+              <button type="button" class="is-active" data-board-cat="all">모든 카테고리</button>
+              <button type="button" data-board-cat="일반 공지">일반 공지</button>
+              <button type="button" data-board-cat="설명회">설명회</button>
+              <button type="button" data-board-cat="교육정보">교육정보</button>
+              <button type="button" data-board-cat="시간표">시간표</button>
+            </div>
+            <form class="board-search" data-board-search role="search">
+              <input data-board-query type="search" placeholder="검색어를 입력해주세요" aria-label="공지 검색" />
+              <button type="submit" aria-label="검색">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </button>
+            </form>
+          </div>
+          <div class="table-wrap">
+            <table class="board-table">
+              <thead>
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">카테고리</th>
+                  <th scope="col">제목</th>
+                  <th scope="col">날짜</th>
+                  <th scope="col">조회</th>
+                </tr>
+              </thead>
+              <tbody data-board-body>
+                <tr><td class="board-empty" colspan="5">현재 게시된 공지가 없습니다.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="faq">
       <div class="container">
         <p class="eyebrow">FAQ</p>
@@ -83,8 +123,8 @@
     </section>
   </main>
   <div id="site-footer"></div>
-  <script src="js/content.js?v=26"></script>
-  <script src="js/config.js?v=26"></script>
-  <script src="js/site.js?v=26"></script>
+  <script src="js/content.js?v=28"></script>
+  <script src="js/config.js?v=28"></script>
+  <script src="js/site.js?v=28"></script>
 </body>
 </html>

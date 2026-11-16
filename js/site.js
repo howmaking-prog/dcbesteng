@@ -244,9 +244,69 @@
     startBanner();
   }
 
+  // 공지 게시판. 분류와 검색어에 맞는 글만 표에 그린다.
+  const board = document.querySelector("[data-board]");
+  if (board && window.CONTENT) {
+    const posts = Array.isArray(window.CONTENT.notices?.posts) ? window.CONTENT.notices.posts : [];
+    const body = board.querySelector("[data-board-body]");
+    const catButtons = [...board.querySelectorAll("[data-board-cat]")];
+    const form = board.querySelector("[data-board-search]");
+    const queryInput = board.querySelector("[data-board-query]");
+    let category = "all";
+    let query = "";
+
+    const sorted = [...posts].sort((a, b) => {
+      if (Boolean(a.pinned) !== Boolean(b.pinned)) return a.pinned ? -1 : 1;
+      return String(b.date || "").localeCompare(String(a.date || ""));
+    });
+
+    const drawBoard = () => {
+      const words = query.trim().toLowerCase();
+      const rows = sorted.filter((post) => {
+        const inCategory = category === "all" || post.category === category;
+        const text = `${post.category || ""} ${post.title || ""}`.toLowerCase();
+        return inCategory && (!words || text.includes(words));
+      });
+      if (!rows.length) {
+        const message = posts.length ? "검색 결과가 없습니다." : "현재 게시된 공지가 없습니다.";
+        body.innerHTML = `<tr><td class="board-empty" colspan="5">${message}</td></tr>`;
+        return;
+      }
+      body.innerHTML = rows.map((post, index) => {
+        const number = post.pinned ? `<span class="is-pinned" aria-label="고정">★</span>` : esc(post.no ?? rows.length - index);
+        const views = Number.isFinite(post.views) ? esc(post.views) : "—";
+        const title = post.href
+          ? `<a href="${esc(post.href)}">${esc(post.title)}</a>`
+          : esc(post.title);
+        return `<tr><td>${number}</td><td>${esc(post.category)}</td><td>${title}</td><td>${esc(post.date)}</td><td>${views}</td></tr>`;
+      }).join("");
+    };
+
+    catButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        category = button.dataset.boardCat || "all";
+        catButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+        drawBoard();
+      });
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      query = queryInput.value;
+      drawBoard();
+    });
+
+    queryInput.addEventListener("input", () => {
+      query = queryInput.value;
+      drawBoard();
+    });
+
+    drawBoard();
+  }
+
   // 홈 화면에 저장한 앱이 온라인이면 최신 파일을 받고, 갱신되면 한 번 다시 연다.
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js?v=26").then((registration) => {
+    navigator.serviceWorker.register("sw.js?v=28").then((registration) => {
       registration.update();
       registration.addEventListener("updatefound", () => {
         const worker = registration.installing;

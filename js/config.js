@@ -74,6 +74,7 @@ window.SITE = {
       items: [
         ["교육정보", "information.html#edu"],
         ["설명회 소식", "information.html#events"],
+        ["공지사항", "information.html#notices"],
         ["FAQ", "information.html#faq"]
       ]
     }

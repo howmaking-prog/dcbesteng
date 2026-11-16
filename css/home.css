@@ -541,3 +541,40 @@
     gap: 40px;
   }
 }
+
+/* 첫 화면 단락 간격. 입시정보와 상담 배너, 오시는 길이 한 박자로 이어지게 맞춘다. */
+body[data-page="home"] .section {
+  padding: 56px 0;
+}
+
+body[data-page="home"] #info {
+  padding-bottom: 16px;
+}
+
+body[data-page="home"] #contact {
+  padding-top: 40px;
+  padding-bottom: 64px;
+}
+
+body[data-page="home"] #contact .contact-grid {
+  margin-top: 48px;
+}
+
+@media (min-width: 1024px) {
+  body[data-page="home"] .section {
+    padding: 88px 0;
+  }
+
+  body[data-page="home"] #info {
+    padding-bottom: 24px;
+  }
+
+  body[data-page="home"] #contact {
+    padding-top: 56px;
+    padding-bottom: 88px;
+  }
+
+  body[data-page="home"] #contact .contact-grid {
+    margin-top: 72px;
+  }
+}

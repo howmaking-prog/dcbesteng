@@ -1,0 +1,13 @@
+# 비밀 값과 인증 파일은 저장소에 올리지 않는다.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+*credentials*.json
+*service-account*.json
+id_rsa
+id_ed25519

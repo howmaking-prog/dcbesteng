@@ -468,13 +468,17 @@ details.card summary::marker {
   display: none;
 }
 
-/* 질문 앞 화살표를 제목과 같은 줄에 둔다. */
+/* 질문 앞 화살표를 제목과 같은 줄에 둔다. 답변이 열리면 아래로 바꾼다. */
 details.card summary::before {
   content: "▶";
   flex: none;
   color: var(--navy);
   font-size: 11px;
   line-height: 1;
+}
+
+details.card[open] summary::before {
+  content: "▼";
 }
 
 details.card summary h3 {

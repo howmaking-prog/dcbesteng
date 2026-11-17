@@ -701,6 +701,18 @@ tr:last-child td {
   .mega-cols {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* 하위 메뉴는 한 칸씩 쌓지 않고 두 칸으로 붙여 길이를 줄인다. */
+  .mega-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+  }
+
+  .mega-title {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+  }
 }
 
 @media (max-width: 560px) {

@@ -237,6 +237,31 @@
   margin-top: 40px;
 }
 
+/* 교육 철학은 번호 제목과 설명을 한 묶음으로 둔다. */
+.philosophy {
+  display: grid;
+  gap: 16px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.philosophy li {
+  display: grid;
+  gap: 6px;
+}
+
+.philosophy strong {
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.philosophy p {
+  margin: 0;
+}
+
 /* 정규프로그램 신청 버튼과 과목 카드가 붙지 않게 띄운다. */
 .dept > .grid {
   margin-top: 40px;

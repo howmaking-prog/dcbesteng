@@ -660,6 +660,56 @@
   color: var(--muted);
 }
 
+/* 학습 사이클은 단계명과 설명을 카드 안에서 위에서 아래로 쌓는다. */
+.cycle-head {
+  margin: 4px 0 16px;
+  color: var(--navy);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.cycle {
+  margin-bottom: 28px;
+}
+
+.cycle-card {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cycle-sub {
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.section--soft .cycle-card .cycle-sub {
+  color: var(--navy);
+}
+
+.cycle-points {
+  display: grid;
+  gap: 10px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cycle-points li {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.cycle-points b {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--navy);
+  font-size: 14px;
+}
+
 .section--navy .icon-box {
   background: rgba(255, 255, 255, 0.08);
   color: var(--white);

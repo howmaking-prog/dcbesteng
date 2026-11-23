@@ -710,6 +710,26 @@
   font-size: 14px;
 }
 
+/* 평가 시스템은 주기와 시험명을 카드로 나눠 보여 준다. */
+.eval {
+  display: grid;
+  gap: 18px;
+}
+
+.eval .cycle-head {
+  margin-bottom: 8px;
+}
+
+.eval .section-lead {
+  margin-top: 0;
+}
+
+.eval-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .section--navy .icon-box {
   background: rgba(255, 255, 255, 0.08);
   color: var(--white);

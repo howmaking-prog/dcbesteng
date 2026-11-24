@@ -288,30 +288,15 @@
   font-weight: 800;
 }
 
-/* 모바일에서는 하위 메뉴를 접고 상위 메뉴만 한 줄로 둔다 */
+/* 모바일 푸터는 연락처만 남기고 메뉴 목록은 두지 않는다. */
 @media (max-width: 899px) {
   .footer-top {
-    gap: 22px;
+    gap: 0;
     padding: 36px 0 20px;
   }
 
   .footer-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .footer-nav a:not(.footer-nav-title) {
     display: none;
-  }
-
-  .footer-nav a.footer-nav-title {
-    margin: 0;
-    padding: 8px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 999px;
-    font-size: 13px;
-    line-height: 1.2;
   }
 }
 
